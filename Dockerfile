@@ -19,7 +19,7 @@ RUN apk add --no-cache bash && \
     addgroup -S appgroup && \
     adduser -S appuser -G appgroup -h /home/appuser
 
-RUN npm install -g @anthropic-ai/claude-code
+RUN npm install -g @anthropic-ai/claude-code @google/gemini-cli
 
 WORKDIR /app
 
