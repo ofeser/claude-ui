@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    ports:
+      - "${PORT:-3001}:3001"
+    volumes:
+      - claude_data:/data
+    environment:
+      - SERVER_PORT=3001
+      - HOST=0.0.0.0
+      - DATABASE_PATH=/data/auth.db
+    restart: unless-stopped
+
+volumes:
+  claude_data:
