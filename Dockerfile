@@ -15,6 +15,10 @@ RUN npm run build
 
 FROM node:22-alpine
 
+RUN apk add --no-cache bash
+
+RUN npm install -g @anthropic-ai/claude-code
+
 WORKDIR /app
 
 COPY --from=builder /app/node_modules ./node_modules
